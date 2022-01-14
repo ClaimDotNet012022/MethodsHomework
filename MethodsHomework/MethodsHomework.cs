@@ -1,5 +1,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -78,8 +79,8 @@ namespace MethodsHomework
             Grading.SumTheContentsOfTheArray(sum);
 
             int[] array3 = { 4, 5, 6, 8, 12, 17 };
-            int value = YourAnswers.GetValueAtPosition3(array3);
-            Grading.GetValueAtPosition3(value);
+            int value = YourAnswers.GetThirdValue(array3);
+            Grading.GetThirdValue(value);
 
             int length = YourAnswers.GetLengthOfArray(array3);
             Grading.GetLengthOfArray(length);
@@ -242,7 +243,7 @@ namespace MethodsHomework
             Assert.IsTrue(result == 52);
         }
 
-        static public void GetValueAtPosition3(int result)
+        static public void GetThirdValue(int result)
         {
             Assert.IsTrue(result == 6);
         }
