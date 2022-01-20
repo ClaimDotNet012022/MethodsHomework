@@ -106,66 +106,184 @@ namespace MethodsHomework
             // In this section you are allowed to add code that calls the necessary methods, but
             // do NOT change any of the existing code.
             List<int> ages = new List<int> { 15, 27, 43, 12, 19, 51 };
-
-            // Find a method to reverse this list of ages.
-            // hint, uses the dot operatore on ages. like ages.SomeMethod()
             
+            // Find a method to reverse this list of ages.
+            // hint, uses the dot operator on ages. like ages.SomeMethod()
+            ages.Reverse();
             Grading.ListIsReversed(ages);
 
             // find a method to add a value to the list ages at the end.
             int addMeIntoList = 12;
-            
+
+            ages.Add(addMeIntoList);
             Grading.TwelveWasAdded(ages);
 
             // find a method to add a value to the list at the front of the list ages, ie, the start of it, or first value.
             int addMeToTheListAtTheVeryFront = 1;
-            
+
+            ages.Insert(0,addMeToTheListAtTheVeryFront);
             Grading.OneWasAddedToTheFront(ages);
 
             // find a method to clear the list ages.
-            
+            ages.Clear();
             Grading.AgesIsNowEmpty(ages);
 
             // find a method to check if the double amount is negative.
 
             double amount = 29.3;
             // you must capture the result of the found method;
-            bool isNegative = /*Answer here*/;
-            Grading.AmountIsNotNegative(isNegative);
-
-            // Find a method to tell you if the sentence contains the work fox
+            bool isNegative = Double.IsNegative(amount);
+            Grading.AmountIsNotNegative(isNegative); 
+            
+            // Find a method to tell you if the sentence contains the word fox
             string sentence = "The quick brown fox.";
             // you must capture the result of the found method;
-            bool doesContaintFox = /*Answer here*/;
+            bool doesContaintFox = sentence.Contains("fox");
             Grading.ContainsFox(doesContaintFox);
 
             // Find a method to replace the word quick, with the word slow
             // you must capture the result of the found method;
-            sentence.Replace("quick", "slow");
-            string newSentence = /*Answer here*/;
+            
+            string newSentence = sentence.Replace("quick", "slow"); 
             Grading.ReplacedTheWord(newSentence);
 
             // Find a method to Convert this word to lowercase;
             string word = "UPPER";
             // you must capture the result of the found method;
-            string lowered = /*Answer here*/;
+            string lowered = word.ToLower();
             Grading.StringWasLowercased(lowered);
 
             // Find a method to Convert this word to lowercase;
             string needsSplit = "I,Need,These,Separate";
             // you must capture the result of the found method;
-            string[] split = /*Answer here*/;
+            string[] split = needsSplit.Split(',' , 4);
             Grading.StringWasSplit(split);
 
 
             // I hope by now you see the power of what the types already do for you.
         }
+
+        
     }
 
     public class YourAnswers
     {
         //READ ME
         // You write all your methods here.
+        public static void DoNothing()
+        {
+
+        }
+
+        public static int ReturnIntWithValue25()
+        {
+            return 25;
+        }
+
+        public static int AddTwoNumbers(int num1, int num2)
+        {
+            int sum = num1 + num2;
+            return sum;
+        }
+
+        public static int IncrementMe(int valueToIncrement)
+        {
+            int increment = valueToIncrement + 1;
+            return increment;
+        }
+
+        public static int DecrementMe(int valueToDecrement)
+        {
+            int Decrement = valueToDecrement - 1;
+            return Decrement;
+        }
+
+        public static int CastDoubleToInt(double valueToBeCasted)
+        {
+            int casted = (int)valueToBeCasted;
+            return casted;
+        }
+
+
+        public static double ConvertIntToDouble (int valueToBeConverted)
+        {
+            double converted = Convert.ToDouble(valueToBeConverted);
+            return converted;
+        }
+
+        public static string CastMeIntoAString( double valueToBeCastedIntoString)
+        {
+            string casted = Convert.ToString(valueToBeCastedIntoString);
+            return casted;
+        }
+
+        public static double ParseMeIntoADouble(string value)
+        {
+            double parseValue = Double.Parse(value);
+            return parseValue;
+        }
+
+        public static int ReturnMaxIntValue()
+        {
+            return int.MaxValue;
+        }
+
+        public static bool CheckIfIAmTrue(bool whatIf)
+        {
+            whatIf = false;
+
+            return whatIf;
+        }
+       
+        public static bool ReturnTrueOnlyIfIamBothPositiveAndEven(int check)
+        {
+            if (check % 2 == 0 && check >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static int SumTheContentsOfTheArray(int[] array)
+        {
+            int sum = array.Sum();
+            return sum;
+        }
+
+        public static int GetThirdValue(int[] array)
+        {
+            int value = array[2];
+            return value;
+        }
+
+        public static int GetLengthOfArray(int[] array)
+        {
+            int length = array.Length;
+            return length;
+        }
+
+        public static bool CheckAllValuesAre3(int[] array)
+        {
+            bool check = array.All( value => value == 3);
+            return check;
+            
+        }
+
+        public static int[] SwapFirstValueWithLastValue(int[] array)
+        {
+            int width = array.Length; //to get length
+            int arrayLast = array[width - 1];//to get value of last position
+            int arrayFirst = array[0];//to save first
+            array[0] = arrayLast;//swapping first with last
+            array[width - 1] = arrayFirst;//swapping last with first
+            return array;
+        }
+
+      
+
         
     }
 
