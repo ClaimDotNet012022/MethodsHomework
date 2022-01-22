@@ -230,9 +230,17 @@ namespace MethodsHomework
 
         public static bool CheckIfIAmTrue(bool whatIf)
         {
-            whatIf = false;
 
-            return whatIf;
+            if(whatIf == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            
         }
        
         public static bool ReturnTrueOnlyIfIamBothPositiveAndEven(int check)
