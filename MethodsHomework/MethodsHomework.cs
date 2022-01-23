@@ -109,52 +109,52 @@ namespace MethodsHomework
 
             // Find a method to reverse this list of ages.
             // hint, uses the dot operatore on ages. like ages.SomeMethod()
-            
+            ages.Reverse();
             Grading.ListIsReversed(ages);
 
             // find a method to add a value to the list ages at the end.
             int addMeIntoList = 12;
-            
+            ages.Add(addMeIntoList);
             Grading.TwelveWasAdded(ages);
 
             // find a method to add a value to the list at the front of the list ages, ie, the start of it, or first value.
             int addMeToTheListAtTheVeryFront = 1;
-            
+            ages.Insert(0, addMeToTheListAtTheVeryFront);
             Grading.OneWasAddedToTheFront(ages);
 
             // find a method to clear the list ages.
-            
+            ages.Clear();
             Grading.AgesIsNowEmpty(ages);
 
             // find a method to check if the double amount is negative.
 
             double amount = 29.3;
             // you must capture the result of the found method;
-            bool isNegative = /*Answer here*/;
+            bool isNegative = double.IsNegative(amount);/*Answer here*/
             Grading.AmountIsNotNegative(isNegative);
 
             // Find a method to tell you if the sentence contains the work fox
             string sentence = "The quick brown fox.";
             // you must capture the result of the found method;
-            bool doesContaintFox = /*Answer here*/;
+            bool doesContaintFox = sentence.Contains("fox");/*Answer here*/
             Grading.ContainsFox(doesContaintFox);
 
             // Find a method to replace the word quick, with the word slow
             // you must capture the result of the found method;
-            sentence.Replace("quick", "slow");
-            string newSentence = /*Answer here*/;
+            
+            string newSentence = sentence.Replace("quick", "slow");/*Answer here*/
             Grading.ReplacedTheWord(newSentence);
 
             // Find a method to Convert this word to lowercase;
             string word = "UPPER";
             // you must capture the result of the found method;
-            string lowered = /*Answer here*/;
+            string lowered = word.ToLower();/*Answer here*/
             Grading.StringWasLowercased(lowered);
 
             // Find a method to Convert this word to lowercase;
             string needsSplit = "I,Need,These,Separate";
             // you must capture the result of the found method;
-            string[] split = /*Answer here*/;
+            string[] split = needsSplit.Split(',',4);/*Answer here*/
             Grading.StringWasSplit(split);
 
 
@@ -166,7 +166,135 @@ namespace MethodsHomework
     {
         //READ ME
         // You write all your methods here.
-        
+
+        public static void DoNothing()
+        {
+            return;
+        }
+
+        public static int ReturnIntWithValue25()
+        {
+            int shouldBe25 = 25;
+            return shouldBe25;
+        }
+
+        public static int AddTwoNumbers(int num1, int num2)
+        {
+            int shouldBeAdded = num1 + num2;
+            return shouldBeAdded;
+        }
+
+        public static int IncrementMe(int num)
+        {
+            int incremented = num + 1;
+            return incremented;
+        }
+
+        public static int DecrementMe(int num)
+        {
+            int decremented = num - 1;
+            return decremented;
+        }
+
+        public static int CastDoubleToInt(double num)
+        {
+            int casted = (int)num;
+            return casted;
+        }
+
+        public static double ConvertIntToDouble(int num)
+        {
+            double converted = Convert.ToDouble(num);
+            return converted;
+        }
+
+        public static string CastMeIntoAString(double num)
+        {
+            string castedString = num.ToString();
+            return castedString;
+        }
+
+        public static double ParseMeIntoADouble(string message)
+        {
+            double parsed = double.Parse(message);
+            return parsed;
+        }
+
+        public static int ReturnMaxIntValue()
+        {
+            int max = int.MaxValue;
+            return max;
+        }
+
+        public static bool CheckIfIAmTrue(bool boolean)
+        {
+            if (boolean)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool ReturnTrueOnlyIfIamBothPositiveAndEven(int num)
+        {
+           
+            if (num % 2 == 0 && num >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        public static int SumTheContentsOfTheArray(int[] array)
+        {
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        public static int GetThirdValue(int[] array)
+        {
+            int value = array[2];
+            return value;
+        }
+        public static int GetLengthOfArray(int[] array)
+        {
+            int length = array.Length;
+            return length;
+        }
+        public static bool CheckAllValuesAre3(int[] array)
+        {
+            bool allValuesAre3 = true;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != 3)
+                {
+                    allValuesAre3 = false;
+                }
+
+            }
+            return allValuesAre3;
+        }
+
+        public static int[] SwapFirstValueWithLastValue(int[] array)
+        {   int length = array.Length;   
+            int last = array[length - 1];
+            int first = array[0];
+            array[0] = last;
+            array[length - 1] = first;
+            return array;
+        }
+
     }
 
 
