@@ -1,0 +1,4 @@
+﻿Damons Notes
+
+Monday - 01-24-22
+	4 errors left to fix. confused on applying correct operands wihtin method.
