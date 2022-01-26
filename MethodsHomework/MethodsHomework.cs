@@ -89,7 +89,8 @@ namespace MethodsHomework
             bool allValuesAre3 = YourAnswers.CheckAllValuesAre3(array4);
             Grading.CheckAllValuesAre3(allValuesAre3);
 
-            int[] arraySwapped = YourAnswers.SwapFirstValueWithLastValue(array4);
+            int[] arraySwapped = YourAnswers.SwapFirstValueWithLastValue(array);
+
             Grading.SwapFirstValueWithLastValue(arraySwapped);
 
         }
@@ -143,13 +144,13 @@ namespace MethodsHomework
             // Find a method to replace the word quick, with the word slow
             // you must capture the result of the found method;
             sentence.Replace("quick", "slow");
-            string newSentence = sentence /*Answer here*/;
+            string newSentence = sentence.Replace("quick", "slow"); /*Answer here*/;
             Grading.ReplacedTheWord(newSentence);
 
             // Find a method to Convert this word to lowercase;
             string word = "UPPER";
             // you must capture the result of the found method;
-            string lowered = word /*Answer here*/;
+            string lowered = word.ToLower(); /*Answer here*/;
             Grading.StringWasLowercased(lowered);
 
             // Find a method to Convert this word to lowercase;
@@ -157,7 +158,7 @@ namespace MethodsHomework
 
             // you must capture the result of the found method;
 
-            string[] split = needsSplit.Split(',' , 4) /*Answer here*/;
+            string[] split = needsSplit.Split(',', 4) /*Answer here*/;
             Grading.StringWasSplit(split);
 
 
@@ -171,7 +172,7 @@ namespace MethodsHomework
         // You write all your methods here.
         public static int DoNothing()
         {
-            return 0 ;
+            return 0;
         }
 
         public static int ReturnIntWithValue25()
@@ -187,27 +188,27 @@ namespace MethodsHomework
 
         public static int IncrementMe(int x)
         {
-            int y = x++;
-            return y;
+            // changed post to pre-increments
+            return ++x;
         }
 
         public static int DecrementMe(int x)
         {
-            int y = x--;
-            return y;
+
+            return --x;
         }
 
         public static int CastDoubleToInt(double x)
         {
             double y = x;
-            int d = (int) y;
+            int d = (int)y;
             return d;
         }
 
         public static double ConvertIntToDouble(int x)
         {
             int y = x;
-            double d = (double) y;
+            double d = (double)y;
             return d;
         }
 
@@ -221,29 +222,29 @@ namespace MethodsHomework
         public static double ParseMeIntoADouble(string valueToBeParsed)
         {
             double result = double.Parse(valueToBeParsed);  // had no been parsed
-            return result; 
+            return result;
         }
 
         public static int ReturnMaxIntValue()
         {
-                return int.MaxValue;
+            return int.MaxValue;
         }
 
         public static bool CheckIfIAmTrue(bool amITrue)
         {
             if (amITrue != true)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
         public static bool ReturnTrueOnlyIfIamBothPositiveAndEven(int x)
         {
-            if (x >= 0 && x  % 2 == 0)
+            if (x >= 0 && x % 2 == 0)
             {
                 return true;
             }
@@ -253,13 +254,13 @@ namespace MethodsHomework
             }
         }
 
-        
+
 
         public static int SumTheContentsOfTheArray(int[] array)
         {
             int sum = 0;
-            for(int i = 0; i < array.Length; i++)
-                sum += i;
+            for (int i = 0; i < array.Length; i++)
+                sum += array[i];
             return sum;
         }
 
@@ -275,30 +276,30 @@ namespace MethodsHomework
 
         public static bool CheckAllValuesAre3(int[] array4)
         {
-            
+
             for (int i = 0; i < array4.Length; i++)
             {
+
                 if (array4[i] != 3)
                 {
                     return false;
                 }
-                else
-                {
-                    return true;
-                }
-                
             }
+            return true;
         }
 
-        public static int[] SwapFirstValueWithLastValue(int[] array4)
+        static public int[] SwapFirstValueWithLastValue(int[] array)
         {
-            string swapped = array4[0];
-            array4[0] = array4[2];
-            array4[array4.Count - 1] = swapped;
-            
-            return swapped;
+            int swapped = array[0];    // first position
+            array[0] = array[array.Length - 1];
+            array[array.Length - 1] = swapped;
+            //int l = array.Length - 1;
+            //(array[0], array[l]) = (array[l], array[0]);
+
+
+            return array;
         }
-    }  
+    }
 
 
 
