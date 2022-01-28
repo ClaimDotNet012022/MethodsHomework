@@ -109,52 +109,52 @@ namespace MethodsHomework
 
             // Find a method to reverse this list of ages.
             // hint, uses the dot operatore on ages. like ages.SomeMethod()
-            
+            ages.Reverse();
             Grading.ListIsReversed(ages);
 
             // find a method to add a value to the list ages at the end.
             int addMeIntoList = 12;
-            
+            ages.Add(addMeIntoList);
             Grading.TwelveWasAdded(ages);
 
             // find a method to add a value to the list at the front of the list ages, ie, the start of it, or first value.
             int addMeToTheListAtTheVeryFront = 1;
-            
+            ages.Insert(0, addMeToTheListAtTheVeryFront);
             Grading.OneWasAddedToTheFront(ages);
 
             // find a method to clear the list ages.
-            
+            ages.Clear();
             Grading.AgesIsNowEmpty(ages);
 
             // find a method to check if the double amount is negative.
 
             double amount = 29.3;
             // you must capture the result of the found method;
-            bool isNegative = /*Answer here*/;
+            bool isNegative = double.IsNegative(amount);
             Grading.AmountIsNotNegative(isNegative);
 
             // Find a method to tell you if the sentence contains the work fox
             string sentence = "The quick brown fox.";
             // you must capture the result of the found method;
-            bool doesContaintFox = /*Answer here*/;
+            bool doesContaintFox = sentence.Contains("fox");
             Grading.ContainsFox(doesContaintFox);
 
             // Find a method to replace the word quick, with the word slow
             // you must capture the result of the found method;
             sentence.Replace("quick", "slow");
-            string newSentence = /*Answer here*/;
+            string newSentence = sentence.Replace("quick", "slow");
             Grading.ReplacedTheWord(newSentence);
 
             // Find a method to Convert this word to lowercase;
             string word = "UPPER";
             // you must capture the result of the found method;
-            string lowered = /*Answer here*/;
+            string lowered = word.ToLower();
             Grading.StringWasLowercased(lowered);
 
             // Find a method to Convert this word to lowercase;
             string needsSplit = "I,Need,These,Separate";
             // you must capture the result of the found method;
-            string[] split = /*Answer here*/;
+            string[] split = needsSplit.Split(',');
             Grading.StringWasSplit(split);
 
 
@@ -166,7 +166,134 @@ namespace MethodsHomework
     {
         //READ ME
         // You write all your methods here.
-        
+        public static void DoNothing()
+        {
+
+        }
+
+        public static int ReturnIntWithValue25()
+        {
+            return 25;
+        }
+
+        public static int AddTwoNumbers(int lhs, int rhs)
+        {
+            return lhs + rhs;
+        }
+
+        public static int IncrementMe(int val)
+        {
+            //val++;
+            //return val;
+
+            return val + 1;
+        }
+
+        public static int DecrementMe(int val)
+        {
+            //val--;
+            //return val;
+
+            return val - 1;
+        }
+
+        public static int CastDoubleToInt(double val)
+        {
+            return (int)val;
+        }
+
+        public static double ConvertIntToDouble(int val)
+        {
+            return val;
+        }
+
+        public static string CastMeIntoAString(double val)
+        {
+            return val.ToString();
+        }
+
+        public static double ParseMeIntoADouble(string str)
+        {
+            return double.Parse(str);
+        }
+
+        public static int ReturnMaxIntValue()
+        {
+            return int.MaxValue;
+        }
+
+        public static bool CheckIfIAmTrue(bool b)
+        {
+            return b;
+        }
+
+        public static bool ReturnTrueOnlyIfIamBothPositiveAndEven(int val)
+        {
+            bool isPositive = (val > 0);
+            bool isEven = (val % 2 == 0);
+            return isPositive && isEven;
+
+            //return (val > 0) && (val % 2 == 0);
+        }
+
+        public static int SumTheContentsOfTheArray(int[] arr)
+        {
+            int sum = 0;
+            foreach(int item in arr)
+            {
+                sum += item;
+            }
+
+            return sum;
+        }
+
+        public static int GetThirdValue(int[] arr)
+        {
+            return arr[2];
+        }
+
+        public static int GetLengthOfArray(int[] arr)
+        {
+            return arr.Length;
+        }
+
+        public static bool CheckAllValuesAre3(int[] arr)
+        {
+            //bool result = true;
+            foreach(int item in arr)
+            {
+                if (item != 3)
+                {
+                    //result = false;
+                    //break;
+                    return false;
+                }
+            }
+
+            //return result;
+            return true;
+        }
+
+        public static int[] SwapFirstValueWithLastValue(int[] arr)
+        {
+            // Mutate the array
+            int lastIndex = arr.Length - 1;
+            int tmp = arr[0];
+            arr[0] = arr[lastIndex];
+            arr[lastIndex] = tmp;
+            return arr;
+
+            //// Return a new (copied) array)
+            //int[] newArray = new int[arr.Length];
+            //for(int i = 0; i < arr.Length; i++)
+            //{
+            //    newArray[i] = arr[i];
+            //}
+            //int lastIndex = arr.Length - 1;
+            //newArray[0] = arr[lastIndex];
+            //newArray[lastIndex] = arr[0];
+            //return newArray;
+        }
     }
 
 
